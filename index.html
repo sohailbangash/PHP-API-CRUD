@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+ 
+    <style>
+      .jumbotron{
+        position: relative;
+      }
+      .message{
+        position: absolute;
+        z-index: 1000;
+        top:50%;
+        left:40%;
+      }
+    </style>
+
+</head>
+<body>
+       
+        <nav class="navbar navbar-light jumbotron">
+            <a class="navbar-brand"></a>
+            <h1 class="text-center text-danger">REST API CRUD OPERATIONS</h1>
+            <form class="form-inline">
+            
+              <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" autofocus aria-label="Search">
+              <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+            </form>
+            <div class="col-md-6 mt-5 offset-6">
+              <div class="alert alert-success message" id="success-message"></div>
+              <div class="alert alert-danger message"  id="error-message"></div>
+          </div>
+    
+          </nav>
+
+    <div class="container">
+    
+
+    <form id="addForm">
+        <div class="form-row">
+          <div class="col-7">
+            <input type="text" class="form-control" name="sname" id="sname" placeholder="Enter your name" autofocus>
+          </div>
+          <div class="col">
+            <input type="number" class="form-control"  name="sage" id="sage" placeholder=" Age">
+          </div>
+          <div class="col-3">
+            <input type="text" class="form-control"  name="scity" id="scity" placeholder="City name">
+          </div>
+          <div class="col">
+          <button class="btn btn-primary" id="save-btn">Save</button>
+          </div>
+        </div>
+        
+      </form>
+    
+    </div>
+
+<!-- Table -->
+
+<div class="container mt-5">
+
+
+    <table class="table table-hover table-sm">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">City</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody id="load-data">
+         
+          
+        </tbody>
+      </table>
+     
+ 
+
+</div>
+
+ <!-- pop modal box for update -->
+
+<!-- Modal -->
+ 
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Update Data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="update_form">
+          <div class="form">
+            <div class="col form-group">
+              <input type="text" class="form-control" name="sname" id="name" placeholder="Enter your name">
+              <input type="text"  id="sid" name="sid"  hidden="">
+            </div>
+            <div class="col-3 form-group">
+              <input type="number" class="form-control" name="sage"  id="age" placeholder=" Age">
+            </div>
+            <div class="col form-group">
+              <input type="text" class="form-control"  name="scity" id="city" placeholder="City name">
+            </div>
+         
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            <button type="button" id="update_btn" class="btn btn-success">Update</button>
+          </div>
+        </form>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+ <script src="js/jquery.js"></script> 
+ <script src="js/bootstrap.min.js"></script>
+ <script src="js/custom.js"></script>
+  
+
+</body>
+</html>
